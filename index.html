@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mert Kocyigit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c8bff;
+      --accent2: #a78bfa;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --border: #2a2f4a;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(15, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108, 139, 255, 0.12) 0%, transparent 70%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(108, 139, 255, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(108, 139, 255, 0.3);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.7rem 1.6rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover { background: #5578ff; transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 3rem;
+      font-size: 1rem;
+    }
+
+    /* CARDS GRID */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(108, 139, 255, 0.12);
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: var(--surface2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: gap 0.2s;
+    }
+
+    .card-link:hover { gap: 0.6rem; }
+
+    /* HOBBY ITEMS */
+    .hobby-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .hobby-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .hobby-item:hover {
+      border-color: var(--accent2);
+      transform: translateY(-2px);
+    }
+
+    .hobby-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .hobby-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .hobby-item p { font-size: 0.82rem; color: var(--muted); }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .nav-links { gap: 1rem; }
+      .cards { grid-template-columns: 1fr; }
+      .hobby-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">MK</a>
+    <ul class="nav-links">
+      <li><a href="#ai-projects">AI Projects</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#school">School</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-tag">Portfolio</span>
+    <h1>Mert Kocyigit</h1>
+    <p>Building intelligent systems, exploring the world, and making an impact in school.</p>
+    <div class="hero-cta">
+      <a href="https://github.com/mertk992" target="_blank" class="btn btn-primary">GitHub Profile</a>
+      <a href="#ai-projects" class="btn btn-outline">View Projects</a>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- AI PROJECTS -->
+  <section id="ai-projects">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">AI Projects</h2>
+    <p class="section-desc">Automation and AI tools I've built to solve real-world problems.</p>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>Auto Scheduling</h3>
+        <p>An AI-powered scheduling tool designed for businesses — automating time management and resource allocation.</p>
+        <div class="card-tags">
+          <span class="tag">React</span>
+          <span class="tag">Vite</span>
+          <span class="tag">AI</span>
+        </div>
+        <a href="https://github.com/mertk992/autoscheduling" target="_blank" class="card-link">
+          View on GitHub →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- HOBBIES -->
+  <section id="hobbies">
+    <div class="section-label">Personal</div>
+    <h2 class="section-title">Hobbies</h2>
+    <p class="section-desc">Things I love to do outside of work and school.</p>
+
+    <div class="hobby-list">
+      <div class="hobby-item">
+        <span class="hobby-icon">✈️</span>
+        <div>
+          <h4>Travel</h4>
+          <p>Exploring new cultures and destinations around the world.</p>
+        </div>
+      </div>
+      <div class="hobby-item">
+        <span class="hobby-icon">💻</span>
+        <div>
+          <h4>Side Projects</h4>
+          <p>Building fun apps like my Japan trip planner.</p>
+        </div>
+      </div>
+      <div class="hobby-item">
+        <span class="hobby-icon">🗾</span>
+        <div>
+          <h4>Japan Trip Planner</h4>
+          <p>Interactive winter travel app with itinerary, budget tracker, and maps.</p>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <!-- Japan Travel Project Card -->
+    <div class="cards" style="margin-top: 1.5rem;">
+      <div class="card">
+        <div class="card-icon">🗾</div>
+        <h3>Japan Travel Planner</h3>
+        <p>An interactive web app for planning a winter trip to Japan — includes editable itinerary, JPY/USD budget tracker, interactive map, and local data persistence.</p>
+        <div class="card-tags">
+          <span class="tag">React</span>
+          <span class="tag">Leaflet</span>
+          <span class="tag">Tailwind</span>
+          <span class="tag">Travel</span>
+        </div>
+        <a href="https://github.com/mertk992/japantravel" target="_blank" class="card-link">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SCHOOL ACTIVITIES -->
+  <section id="school">
+    <div class="section-label">Academic</div>
+    <h2 class="section-title">School Activities</h2>
+    <p class="section-desc">Projects and work from my academic journey.</p>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Foster Blueprint</h3>
+        <p>A web application built as part of a school initiative to support the foster care community with structured planning tools.</p>
+        <div class="card-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Netlify</span>
+        </div>
+        <a href="https://github.com/mertk992/fosterblueprint" target="_blank" class="card-link">
+          View on GitHub →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Built by <a href="https://github.com/mertk992" target="_blank">Mert Kocyigit</a> · <a href="https://github.com/mertk992" target="_blank">GitHub</a></p>
+  </footer>
+
+</body>
+</html>
