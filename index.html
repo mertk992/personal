@@ -403,6 +403,60 @@
       line-height: 1;
     }
 
+    /* Photo hobby cards */
+    .bento-photo { position: relative; color: inherit; }
+    .bento-photo:hover { transform: translateY(-2px); }
+
+    .bento-photo-bg {
+      flex: 1;
+      min-height: 160px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bus-bg {
+      background: linear-gradient(135deg, #b8860b 0%, #8b6914 40%, #5c4a1e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: rgba(255,255,255,0.25);
+    }
+    .bus-bg::after { content: '🚌'; font-size: 3.5rem; opacity: 0.6; }
+
+    .mtb-bg {
+      background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 50%, #081c15 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mtb-bg::after { content: '🚵'; font-size: 3rem; opacity: 0.6; }
+
+    .bento-photo-content {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .bento-photo-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+
+    .bento-photo-content p {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
+    }
+
+    .bento-photo-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
     /* ── SCHOOL TIMELINE ── */
     .school-list {
       display: flex;
@@ -571,10 +625,11 @@
         <span class="section-num">01</span>
         <h2 class="section-title">AI Projects</h2>
       </div>
-      <span class="section-count">1 project</span>
+      <span class="section-count">3 projects</span>
     </div>
 
     <div class="project-list">
+
       <a href="https://github.com/mertk992/autoscheduling" target="_blank" class="project-card reveal">
         <div>
           <div class="project-meta">
@@ -592,6 +647,46 @@
           </div>
         </div>
       </a>
+
+      <div class="project-card reveal reveal-delay-1" style="cursor:default;">
+        <div>
+          <div class="project-meta">
+            <span class="project-tag tag-ai">AI · ML</span>
+            <span class="project-tag" style="background:#f0fdf4;color:#166534;">Group Project</span>
+          </div>
+          <div class="project-title">Vehicle Damage Detection & Repair Workflow</div>
+          <div class="project-desc">
+            An end-to-end agentic AI workflow for vehicle repair chains. Customers submit photos of damage — a multimodal ML model classifies severity and generates a repair quote. Once approved, a rules-based engine automatically schedules a service appointment. An LLM layer supports mechanic knowledge sharing for faster diagnostics. Projected to reduce resolution time by 10–20%.
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Multimodal ML</span>
+            <span class="stack-tag">LLM</span>
+            <span class="stack-tag">Agentic Workflow</span>
+            <span class="stack-tag">Auto-Scheduling</span>
+            <span class="stack-tag">AI in Business</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://github.com/mertk992/japantravel" target="_blank" class="project-card reveal reveal-delay-2">
+        <div>
+          <div class="project-meta">
+            <span class="project-tag tag-js">JavaScript</span>
+            <span class="project-tag" style="background:#fdf4ff;color:#7e22ce;">Interactive</span>
+          </div>
+          <div class="project-title">Japan Travel Planner</div>
+          <div class="project-desc">
+            An interactive web app for planning a winter trip to Japan — editable itinerary, JPY/USD budget tracker, Leaflet-powered route map from Tokyo to Nagano, and local data persistence.
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Leaflet</span>
+            <span class="stack-tag">Tailwind</span>
+            <span class="stack-tag">GitHub Pages</span>
+          </div>
+        </div>
+      </a>
+
     </div>
   </section>
 
@@ -606,25 +701,28 @@
 
     <div class="bento">
 
-      <div class="bento-card wide reveal">
-        <span class="bento-emoji">🗾</span>
-        <h3>Japan Travel Planner</h3>
-        <p>An interactive web app for planning a winter trip to Japan — editable itinerary, JPY/USD budget tracker, interactive Leaflet map, and local data persistence.</p>
-        <a href="https://github.com/mertk992/japantravel" target="_blank">View project →</a>
-        <span class="bento-bg">🗾</span>
-      </div>
+      <a href="https://photos.app.goo.gl/M1FYJX2HDEpe6R7Y7" target="_blank" class="bento-card wide bento-photo reveal" style="padding:0; overflow:hidden; min-height:260px; display:flex; flex-direction:column; text-decoration:none;">
+        <div class="bento-photo-bg bus-bg"></div>
+        <div class="bento-photo-content">
+          <h3>Bus Conversion</h3>
+          <p>Converting a school bus into a home on wheels — full build documented.</p>
+          <span class="bento-photo-link">View photo album →</span>
+        </div>
+      </a>
 
-      <div class="bento-card reveal reveal-delay-1">
-        <span class="bento-emoji">✈️</span>
-        <h3>Travel</h3>
-        <p>Exploring new cultures, cities, and landscapes around the world — one trip at a time.</p>
-        <span class="bento-bg">✈️</span>
-      </div>
+      <a href="https://photos.app.goo.gl/87pU73BYBoWp1GaB8" target="_blank" class="bento-card bento-photo reveal reveal-delay-1" style="padding:0; overflow:hidden; min-height:220px; display:flex; flex-direction:column; text-decoration:none;">
+        <div class="bento-photo-bg mtb-bg"></div>
+        <div class="bento-photo-content">
+          <h3>Mountain Biking</h3>
+          <p>Hitting the trails at Whistler.</p>
+          <span class="bento-photo-link">View photo album →</span>
+        </div>
+      </a>
 
       <div class="bento-card reveal reveal-delay-2">
         <span class="bento-emoji">💻</span>
         <h3>Building Side Projects</h3>
-        <p>Turning ideas into real apps — from trip planners to AI tools, I build things for fun.</p>
+        <p>Turning ideas into real apps — from trip planners to AI tools.</p>
         <span class="bento-bg">💻</span>
       </div>
 
@@ -638,11 +736,25 @@
         <span class="section-num">03</span>
         <h2 class="section-title">School Activities</h2>
       </div>
-      <span class="section-count">1 project</span>
+      <span class="section-count">2 activities</span>
     </div>
 
     <div class="school-list">
-      <a href="https://mertk992.github.io/fosterblueprint/" target="_blank" class="school-card reveal">
+
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7431792130332942336/" target="_blank" class="school-card reveal">
+        <div class="school-icon-wrap">🎗️</div>
+        <div>
+          <h3>C4C Auction Gala — $125,000 Raised</h3>
+          <p>Led the University of Washington's Challenge for Charity Auction Gala as head organiser. The event raised $125,000 for the Boys & Girls Club of King County, Special Olympics WA, and the University District Food Bank.</p>
+          <div class="project-stack" style="margin-top: 0.65rem;">
+            <span class="stack-tag">UW</span>
+            <span class="stack-tag">Event Leadership</span>
+            <span class="stack-tag">Fundraising</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://mertk992.github.io/fosterblueprint/" target="_blank" class="school-card reveal reveal-delay-1">
         <div class="school-icon-wrap">📋</div>
         <div>
           <h3>Foster Blueprint</h3>
@@ -654,6 +766,7 @@
           </div>
         </div>
       </a>
+
     </div>
   </section>
 
