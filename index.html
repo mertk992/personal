@@ -403,58 +403,26 @@
       line-height: 1;
     }
 
-    /* Photo hobby cards */
-    .bento-photo { position: relative; color: inherit; }
-    .bento-photo:hover { transform: translateY(-2px); }
-
-    .bento-photo-bg {
-      flex: 1;
-      min-height: 160px;
-      background-size: cover;
-      background-position: center;
+    /* Trading card hobby cards */
+    .trading-card { position: relative; }
+    .trading-card-img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      display: block;
     }
-
-    .bus-bg {
-      background: linear-gradient(135deg, #b8860b 0%, #8b6914 40%, #5c4a1e 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      color: rgba(255,255,255,0.25);
-    }
-    .bus-bg::after { content: '🚌'; font-size: 3.5rem; opacity: 0.6; }
-
-    .mtb-bg {
-      background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 50%, #081c15 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .mtb-bg::after { content: '🚵'; font-size: 3rem; opacity: 0.6; }
-
-    .bento-photo-content {
-      padding: 1.25rem 1.5rem 1.5rem;
-    }
-
-    .bento-photo-content h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-      margin-bottom: 0.3rem;
-      color: var(--ink);
-    }
-
-    .bento-photo-content p {
-      font-size: 0.85rem;
-      color: var(--ink-mid);
-      line-height: 1.5;
-      margin-bottom: 0.6rem;
-    }
-
-    .bento-photo-link {
+    .trading-card.wide .trading-card-img { min-height: 260px; }
+    .trading-card-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0.6rem 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+      color: #fff;
       font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     /* ── SCHOOL TIMELINE ── */
@@ -602,7 +570,7 @@
   <!-- ── HERO ── -->
   <div class="hero">
     <div class="hero-text">
-      <p class="hero-eyebrow reveal">Based online — building things with AI</p>
+      <p class="hero-eyebrow reveal">Based in Seattle — building things with AI</p>
       <h1 class="hero-name reveal reveal-delay-1">Mert<br /><em>Kocyigit</em></h1>
       <p class="hero-bio reveal reveal-delay-2">
         Student, builder, and traveller. I make AI tools that solve real problems, document the places I explore, and build things that matter in school.
@@ -701,23 +669,15 @@
 
     <div class="bento">
 
-      <a href="https://photos.app.goo.gl/M1FYJX2HDEpe6R7Y7" target="_blank" class="bento-card wide bento-photo reveal" style="padding:0; overflow:hidden; min-height:260px; display:flex; flex-direction:column; text-decoration:none;">
-        <div class="bento-photo-bg bus-bg"></div>
-        <div class="bento-photo-content">
-          <h3>Bus Conversion</h3>
-          <p>Converting a school bus into a home on wheels — full build documented.</p>
-          <span class="bento-photo-link">View photo album →</span>
-        </div>
-      </a>
+      <div class="bento-card trading-card wide reveal" style="padding:0; overflow:hidden;">
+        <img src="hobby-bus.jpg" alt="Bus on the road" class="trading-card-img" />
+        <div class="trading-card-label">Bus Conversion</div>
+      </div>
 
-      <a href="https://photos.app.goo.gl/87pU73BYBoWp1GaB8" target="_blank" class="bento-card bento-photo reveal reveal-delay-1" style="padding:0; overflow:hidden; min-height:220px; display:flex; flex-direction:column; text-decoration:none;">
-        <div class="bento-photo-bg mtb-bg"></div>
-        <div class="bento-photo-content">
-          <h3>Mountain Biking</h3>
-          <p>Hitting the trails at Whistler.</p>
-          <span class="bento-photo-link">View photo album →</span>
-        </div>
-      </a>
+      <div class="bento-card trading-card reveal reveal-delay-1" style="padding:0; overflow:hidden;">
+        <img src="hobby-mtb.jpg" alt="Mountain biking" class="trading-card-img" />
+        <div class="trading-card-label">Mountain Biking</div>
+      </div>
 
       <div class="bento-card reveal reveal-delay-2">
         <span class="bento-emoji">💻</span>
