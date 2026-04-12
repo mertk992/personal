@@ -634,7 +634,7 @@
         </div>
         <div class="project-title">AI Job Tracker & Resume Tailor</div>
         <div class="project-desc">
-          A full-stack agentic pipeline that automates the job search workflow. Paste a job URL and the app scrapes the posting, sends it to Claude (claude-opus-4-6) via the Anthropic API for structured fit analysis, then rewrites resume bullets in a cloned .docx using python-docx — surfacing a word-level diff of every change. A parallel gap analyzer identifies missing qualifications and a follow-up email drafter generates role-specific outreach, both powered by separate Claude API calls with custom system prompts. Aggregates live job listings from four sources (Adzuna, Remotive, The Muse, Google Jobs via SerpAPI) and logs all applications to a tracked pipeline.
+          Scrapes job postings and sends them to Claude (claude-opus-4-6) for structured fit analysis. Rewrites resume bullets via python-docx with a word-level diff view. Separate Claude API calls handle gap analysis and follow-up email drafting. Aggregates live listings from Adzuna, Remotive, The Muse, and Google Jobs (SerpAPI).
         </div>
         <div class="project-stack">
           <span class="stack-tag">Python</span>
@@ -655,7 +655,7 @@
         </div>
         <div class="project-title">Auto Scheduling</div>
         <div class="project-desc">
-          An AI-powered scheduling tool built for businesses — automating time management and resource allocation so teams can focus on what matters.
+          AI-powered scheduling tool that automates time management and resource allocation using constraint-based logic and a React frontend.
         </div>
         <div class="project-stack">
           <span class="stack-tag">React</span>
@@ -671,7 +671,7 @@
         </div>
         <div class="project-title">Vehicle Damage Detection & Repair Workflow</div>
         <div class="project-desc">
-          An end-to-end agentic AI workflow for vehicle repair chains. Customers submit photos of damage — a multimodal ML model classifies severity and generates a repair quote. Once approved, a rules-based engine automatically schedules a service appointment. An LLM layer supports mechanic knowledge sharing for faster diagnostics. Projected to reduce resolution time by 10-20%.
+          Agentic workflow for vehicle repair chains. A multimodal ML model classifies damage severity from photos and generates a repair quote. A rules-based engine auto-schedules the appointment. An LLM layer surfaces relevant mechanic knowledge to speed diagnostics.
         </div>
         <div class="project-stack">
           <span class="stack-tag">Multimodal ML</span>
@@ -690,7 +690,7 @@
         </div>
         <div class="project-title">Japan Travel Planner</div>
         <div class="project-desc">
-          An interactive web app for planning a winter trip to Japan — editable itinerary, JPY/USD budget tracker, Leaflet-powered route map from Tokyo to Nagano, and local data persistence.
+          Interactive trip planner with an editable itinerary, JPY/USD budget tracker, and a Leaflet.js route map. State persisted in localStorage with no backend.
         </div>
         <div class="project-stack">
           <span class="stack-tag">React</span>
@@ -708,7 +708,7 @@
         </div>
         <div class="project-title">NBA Pop-Off Email Alerts</div>
         <div class="project-desc">
-          A real-time NBA game monitor that watches live box scores via the ESPN API and sends email alerts when a player is having a remarkable game — 35+ points, 20+ rebounds, triple-doubles, and more. Runs on GitHub Actions every 3 minutes during game hours.
+          Polls the ESPN API every 3 minutes via GitHub Actions, detects statistical thresholds (35+ pts, triple-doubles, etc.), and fires Gmail SMTP alerts in real time.
         </div>
         <div class="project-stack">
           <span class="stack-tag">Python</span>
@@ -726,7 +726,7 @@
         </div>
         <div class="project-title">Space Intelligence Dashboard</div>
         <div class="project-desc">
-          A live space intelligence dashboard that tracks the ISS in real time, displays upcoming rocket launches, and aggregates space news — powered by Spaceflight News API, Launch Library 2, and Open Notify.
+          Real-time dashboard consuming three REST APIs (Open Notify, Launch Library 2, Spaceflight News) to track the ISS position, upcoming launches, and space news — all client-side with no backend.
         </div>
         <div class="project-stack">
           <span class="stack-tag">JavaScript</span>
@@ -744,7 +744,7 @@
         </div>
         <div class="project-title">Foster Blueprint</div>
         <div class="project-desc">
-          A web application built to support the foster care community — structured planning tools that help families and coordinators stay organised and informed.
+          Web app with structured planning and resource tools for foster families and coordinators, built with vanilla JS and deployed on Netlify.
         </div>
         <div class="project-stack">
           <span class="stack-tag">HTML</span>
